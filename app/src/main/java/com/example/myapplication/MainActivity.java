@@ -1,6 +1,5 @@
 package com.example.myapplication;
 
-import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -29,76 +28,51 @@ public class MainActivity extends AppCompatActivity {
         lblHexaDecimal = findViewById(R.id.lblHexaDecimal);
     }
 
-
-    @SuppressLint("SetTextI18n")
-    public void btnSum(View v) {
-
+    public void Calculate(View v) {
+        String tag = v.getTag().toString();
         String num1 = val1.getText().toString();
         String num2 = val2.getText().toString();
         double value1 = Double.parseDouble(num1);
         double value2 = Double.parseDouble(num2);
-        double answer = value1 + value2;
-        txtAnswer.setText("" + answer);
+        double ans = 0;
+        switch (tag) {
+            case "add":
+                ans = value1 + value2;
+                break;
+            case "sub":
+                ans = value1 - value2;
+                break;
+            case "mul":
+                ans = value1 * value2;
+                break;
+            case "div":
+                ans = value1 / value2;
+                break;
+        }
+        txtAnswer.setText("" + ans);
     }
 
-    @SuppressLint("SetTextI18n")
-    public void btnSub(View v) {
-        String num1 = val1.getText().toString();
-        String num2 = val2.getText().toString();
-        double value1 = Double.parseDouble(num1);
-        double value2 = Double.parseDouble(num2);
-        double answer = value1 - value2;
-        txtAnswer.setText("" + answer);
-    }
-
-    @SuppressLint("SetTextI18n")
-    public void btnMul(View v) {
-        String num1 = val1.getText().toString();
-        String num2 = val2.getText().toString();
-        double value1 = Double.parseDouble(num1);
-        double value2 = Double.parseDouble(num2);
-        double answer = value1 * value2;
-        txtAnswer.setText("" + answer);
-    }
-
-    @SuppressLint("SetTextI18n")
-    public void btnDiv(View v) {
-        String num1 = val1.getText().toString();
-        String num2 = val2.getText().toString();
-        double value1 = Double.parseDouble(num1);
-        double value2 = Double.parseDouble(num2);
-        double answer = value1 / value2;
-        txtAnswer.setText("" + answer);
-
-    }
-
-    @SuppressLint("SetTextI18n")
-    public void btnBinary(View v) {
+    public void convert(View v) {
+        String tag = v.getTag().toString();
         String ans = txtAnswer.getText().toString();
         double ans1 = Double.parseDouble(ans);
-        String binaryAns = Integer.toBinaryString((int) ans1);
-        lblBinary.setText("" + binaryAns);
+        String conAns = "";
+        switch (tag) {
+            case "bin":
+                conAns = Integer.toBinaryString((int) ans1);
+                lblBinary.setText("" + conAns);
+                break;
+            case "oct":
+                conAns = Integer.toOctalString((int) ans1);
+                lblOctal.setText("" + conAns);
+                break;
+            case "hex":
+                conAns = Integer.toHexString((int) ans1);
+                lblHexaDecimal.setText("" + conAns);
+                break;
+        }
 
     }
-
-    @SuppressLint("SetTextI18n")
-    public void btnOctal(View v) {
-        String ans = txtAnswer.getText().toString();
-        double ans1 = Double.parseDouble(ans);
-        String octalAns = Integer.toOctalString((int) ans1);
-        lblOctal.setText("" + octalAns);
-
-    }
-
-    @SuppressLint("SetTextI18n")
-    public void btnHex(View v) {
-        String ans = txtAnswer.getText().toString();
-        double ans1 = Double.parseDouble(ans);
-        String hexAns = Integer.toHexString((int) ans1);
-        lblHexaDecimal.setText("" + hexAns);
-
-    }
-
 
     public void btnClear(View v) {
         val1.setText("");
