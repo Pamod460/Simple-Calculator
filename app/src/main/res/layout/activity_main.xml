@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FACCCC"
+    android:backgroundTint="#E3C7C7"
+    android:backgroundTintMode="src_over"
+    tools:context=".MainActivity"
+    tools:visibility="visible">
+
+        <Button
+            android:id="@+id/btnAdd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="7dp"
+            android:layout_marginTop="232dp"
+            android:onClick="btnSum"
+            android:text="Add"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="MissingConstraints" />
+
+        <Button
+            android:id="@+id/btnSub"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="232dp"
+            android:onClick="btnSub"
+            android:text="Sub"
+            app:layout_constraintStart_toEndOf="@+id/btnAdd"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="MissingConstraints" />
+
+        <Button
+            android:id="@+id/btnMul"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="11dp"
+            android:layout_marginTop="232dp"
+            android:onClick="btnMul"
+            android:text="Mul"
+            app:layout_constraintStart_toEndOf="@+id/btnSub"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="MissingConstraints" />
+
+        <Button
+            android:id="@+id/btnDiv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="232dp"
+            android:onClick="btnDiv"
+            android:text="Div"
+            app:layout_constraintStart_toEndOf="@+id/btnMul"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="MissingConstraints" />
+
+        <Button
+            android:id="@+id/btnClear"
+            android:layout_width="144dp"
+            android:layout_height="61dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="32dp"
+            android:onClick="btnClear"
+            android:text="Clear"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/button3"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/lblValue1"
+            android:layout_width="79dp"
+            android:layout_height="29dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="32dp"
+            android:text="Value 1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/lblValue2"
+            android:layout_width="79dp"
+            android:layout_height="29dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="88dp"
+            android:text="Value 2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/txtValue1"
+            android:layout_width="223dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="24dp"
+            android:background="#FFFFFF"
+            android:ems="10"
+            android:inputType="numberDecimal"
+            android:text=""
+            app:layout_constraintStart_toEndOf="@+id/lblValue1"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
+
+        <EditText
+            android:id="@+id/txtValue2"
+            android:layout_width="223dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="3dp"
+            android:background="#FFFFFF"
+            android:ems="10"
+            android:inputType="numberDecimal"
+            android:text=""
+            app:layout_constraintStart_toEndOf="@+id/lblValue2"
+            app:layout_constraintTop_toBottomOf="@+id/txtValue1"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+        <TextView
+            android:id="@+id/txtAnswer"
+            android:layout_width="229dp"
+            android:layout_height="65dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="12dp"
+            android:background="#FDFCFC"
+            android:text=""
+            app:layout_constraintStart_toEndOf="@+id/lblAnswer"
+            app:layout_constraintTop_toBottomOf="@+id/txtValue2"
+            tools:ignore="MissingConstraints,UnknownId" />
+
+        <TextView
+            android:id="@+id/lblAnswer"
+            android:layout_width="77dp"
+            android:layout_height="62dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="20dp"
+            android:includeFontPadding="false"
+            android:text="Answer"
+            android:textAlignment="center"
+
+            android:textAllCaps="false"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/lblValue2"
+            tools:ignore="MissingConstraints" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="140dp"
+            android:layout_height="57dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="48dp"
+            android:onClick="btnBinary"
+            android:text="convert to \nbinary"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnAdd" />
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="140dp"
+            android:layout_height="59dp"
+            android:layout_marginStart="7dp"
+            android:layout_marginTop="1dp"
+            android:onClick="btnOctal"
+            android:text="convert to \n octal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/button" />
+
+        <Button
+            android:id="@+id/button3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="1dp"
+            android:onClick="btnHex"
+            android:text="convert to \nhexadecimal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/button2" />
+
+        <TextView
+            android:id="@+id/lblBinary"
+            android:layout_width="232dp"
+            android:layout_height="46dp"
+            android:layout_marginStart="28dp"
+            android:layout_marginTop="48dp"
+            android:background="#FFFFFF"
+            app:layout_constraintStart_toEndOf="@+id/button"
+            app:layout_constraintTop_toBottomOf="@+id/btnSub" />
+
+        <TextView
+            android:id="@+id/lblOctal"
+            android:layout_width="232dp"
+            android:layout_height="46dp"
+            android:layout_marginStart="27dp"
+            android:layout_marginTop="16dp"
+            android:background="#FFFFFF"
+            app:layout_constraintStart_toEndOf="@+id/button2"
+            app:layout_constraintTop_toBottomOf="@+id/lblBinary" />
+
+        <TextView
+            android:id="@+id/lblHexaDecimal"
+            android:layout_width="232dp"
+            android:layout_height="46dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="10dp"
+            android:background="#FFFFFF"
+            app:layout_constraintStart_toEndOf="@+id/button3"
+            app:layout_constraintTop_toBottomOf="@+id/lblOctal" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
